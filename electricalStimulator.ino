@@ -1,5 +1,5 @@
 // constants won't change. Used here to set a pin number:
-const int ledPin = LED_BUILTIN;  // the number of the LED pin
+const int ledPin = 13;  // the number of the LED pin
 
 // Variables will change:
 int ledState = LOW;  // ledState used to set the LED
@@ -32,9 +32,9 @@ void setup()
       Serial.println("Cannot stimulate at frequency of 0. Please try again.");
     }
   }
-  pwmInterval = int(((1.0/stimulationFrequencyInHertz) * 1000));
+  pwmInterval = int(((1.0/stimulationFrequencyInHertz) * 1000))/2;
   Serial.print("Will stimuate every ");
-  Serial.print(pwmInterval);
+  Serial.print(pwmInterval*2);
   Serial.print(" milliseconds \n");
   Serial.println("Beginning stimulation at specified frequency");
 }
